@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NaTata_back_Api.iml" filepath="$PROJECT_DIR$/NaTata_back_Api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Natata-generator/Natata-generator.iml" filepath="$PROJECT_DIR$/Natata-generator/Natata-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Natata-server/Natata-server.iml" filepath="$PROJECT_DIR$/Natata-server/Natata-server.iml" />
+    </modules>
+  </component>
+</project>

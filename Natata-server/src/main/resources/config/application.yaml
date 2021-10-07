@@ -1,0 +1,72 @@
+server:
+  #  端口
+  port: 8081
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/NaTata?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: wen
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      #      连接池配置信息
+      #      初始化大小,最小,最大
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      #      配置获取等待超时的时间
+      max-wait: 60000
+      #      配置多久才进行一次监测,监测需要关闭的空闲连接,单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      #      配置一个连接在连接池中最小生存的时间,单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      #      打开PSCache ,并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      #      配置监控拦截器的filters,去掉后监控界面sql无法统计,'wall'用于防火墙
+      filters: stat,wall,slf4j
+      #      通过connectProperties属性来打开mergeSql功能:慢SQL记录
+      connection-properties: druid.stat.mergeSql\=true;druid.stat.slowSqlMillis\=5000
+      #      配置druidStatFilter
+      web-stat-filter:
+        enabled: true
+        url-pattern: "/*"
+        exclusions: ".js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        url-pattern: "/druid/*"
+        #        IP白名单
+        allow: 127.0.0.1
+        #        IP黑名单
+        deny:
+        #          禁用HTML页面上的"Reset All"功能
+        reset-enable: false
+        #        登录名
+        login-username: wen
+        #登录密码
+        login-password: 123456
+
+mybatis-plus:
+  #  配置Mapper映射文件
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  #  配置Mybatis数据返回类型别名(默认别名是类名)
+  type-aliases-package: com.wen.server.entity
+  configuration:
+    #    自动驼峰命名
+    map-underscore-to-camel-case: false
+logging:
+  level:
+    com.wen.server.mapper: debug
+
+jwt:
+  # JWT存储的请求头
+  tokenHeader: Authorization
+  # JWT 加解密使用的密钥
+  secret: yeb-secret
+  # JWT的超期限时间(60*60*24)
+  expiration: 604800
+  # JWT 负载中拿到开头
+  tokenHead: Bearer
