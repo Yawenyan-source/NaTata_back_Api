@@ -33,6 +33,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
     private RedisTemplate<String, Object> redisTemplate;
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<Menu> getMenuByAdminId() {
         Integer adminId = ((Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
         //从redis获取菜单数据
