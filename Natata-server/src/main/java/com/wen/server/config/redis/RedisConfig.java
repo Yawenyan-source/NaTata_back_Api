@@ -19,7 +19,7 @@ public class RedisConfig {
      *
      * @return
      */
-    @Bean
+    @Bean(value = "myRedisTemplate")
     public RedisTemplate<String, Object> redisTemplate() {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         //string类型 key序列器
