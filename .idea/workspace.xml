@@ -7,30 +7,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7c89ee4-9447-45f9-ba06-52e7a46a787f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_2_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_2_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c7c89ee4-9447-45f9-ba06-52e7a46a787f" name="Changes" comment="登录请求完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/config/Filter/JwtAuthorizationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/config/Filter/JwtAuthorizationTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/config/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/config/swagger/Knife4jConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/config/swagger/Knife4jConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/controller/CaptchaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/AdminLoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/AdminLoginParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/RespEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/RespEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/IAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/entity/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/mapper/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/mapper/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/mapper/MenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/IMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/IMenuService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/resources/config/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/resources/config/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Natata-server/src/main/resources/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Natata-server/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +84,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.19354838" />
     <property name="project.structure.side.proportion" value="0.28848484" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RunManager" selected="Spring Boot.NatataServerApplication">
@@ -171,7 +160,16 @@
       <workItem from="1633832114786" duration="3214000" />
       <workItem from="1633921965615" duration="2353000" />
       <workItem from="1634019096501" duration="598000" />
+      <workItem from="1634088807920" duration="6560000" />
     </task>
+    <task id="LOCAL-00001" summary="登录请求完成">
+      <created>1634088985651</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634088985651</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +187,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="登录请求完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录请求完成" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -201,11 +203,6 @@
           <url>file://$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/service/impl/AdminServiceImpl.java</url>
           <line>99</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Natata-server/src/main/java/com/wen/server/config/Filter/JwtAuthorizationTokenFilter.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

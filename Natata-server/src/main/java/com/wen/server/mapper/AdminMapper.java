@@ -2,11 +2,14 @@ package com.wen.server.mapper;
 
 import com.wen.server.entity.Admin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.wen.server.entity.Menu;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author wen

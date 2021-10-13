@@ -4,15 +4,18 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.List;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author wen
@@ -21,9 +24,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @TableName("t_menu")
-@ApiModel(value = "Menu对象", description = "")
+@ApiModel(value = "Menu对象", description = "Menu对象")
 public class Menu implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("id")
@@ -66,5 +70,10 @@ public class Menu implements Serializable {
     @TableField("enabled")
     private Boolean enabled;
 
-
+    /**
+     * (@TableField(exist = false)) 指 表字段中没有childrenMenu,查询时不要查询
+     */
+    @ApiModelProperty("子菜单")
+    @TableField(exist = false)
+    private List<Menu> childrenMenu;
 }

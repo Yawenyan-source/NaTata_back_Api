@@ -4,16 +4,42 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.wen.server.entity.Admin">
-        <id column="id" property="id" />
-        <result column="name" property="name" />
-        <result column="phone" property="phone" />
-        <result column="telephone" property="telephone" />
-        <result column="address" property="address" />
-        <result column="enable" property="enable" />
-        <result column="username" property="username" />
-        <result column="password" property="password" />
-        <result column="userFace" property="userFace" />
-        <result column="remark" property="remark" />
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="phone" property="phone"/>
+        <result column="telephone" property="telephone"/>
+        <result column="address" property="address"/>
+        <result column="enable" property="enable"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="userFace" property="userFace"/>
+        <result column="remark" property="remark"/>
     </resultMap>
+    <resultMap id="Menus" type="com.wen.server.entity.Menu" extends="BaseResultMap">
+        <collection property="childrenMenu" ofType="com.wen.server.entity.Menu">
+        </collection>
+    </resultMap>
+    <select id="getMenuByAdminId" resultMap="Menus">
+        select distinct m1.*,
+                        m2.id          as id2,
+                        m2.url         as url2,
+                        m2.path        as path2,
+                        m2.component   as componnet2,
+                        m2.`name`      as name2,
+                        m2.iconCls     as iconCls2,
+                        m2.keepAlive   as keepAlive2,
+                        m2.requireAuth as requireAuth2,
+                        m2.parentId    as parentId2,
+                        m2.enabled     as enable2
+        from NaTata.t_menu m1,
+             NaTata.t_menu m2,
+             NaTata.t_admin_role ar,
+             NaTata.t_menu_role mr
+        where m1.id = m2.parentId
+          and m2.id = mr.mid
+          and mr.rid = ar.rid
+          and ar.adminId = #{id}
+          and m2.enabled = true;
+    </select>
 
 </mapper>
