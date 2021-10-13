@@ -17,17 +17,19 @@ import java.security.Principal;
 
 /**
  * 登录接口
+ * @author wen
  */
 @Api(tags = "LoginController")
 @RestController
 public class LoginController {
+
     @Autowired
     private AdminServiceImpl adminService;
 
     @ApiOperation(value = "登录之后返回token")
     @PostMapping("/login")
     public RespEntity login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest request) {
-        return adminService.login(adminLoginParam.getUsername(), adminLoginParam.getPassword(), request);
+        return adminService.login(adminLoginParam.getUsername(), adminLoginParam.getPassword(),adminLoginParam.getCode(), request);
     }
 
     @ApiOperation(value = "获取当前用户信息")

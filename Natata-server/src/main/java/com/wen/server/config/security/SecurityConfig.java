@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private RestfulAccessDeniedHandler restfulAccessDeniedHandler;
 
     @Override
-    @Bean
+    @Bean(name = "myUserDetailsService")
     public UserDetailsService userDetailsService() {
         return username -> {
             Admin admin = adminService.getAdminByUsername(username);
@@ -58,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
     }
 
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers(
@@ -67,11 +68,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "/js/**",
                 "/index.html/**",
                 "favicon.ico",
-                "/doc.html",
-                "/webjars/**",
-                "/swagger-resources/**",
-                "/v2/api-docs/**",
-                "/v3/api-docs/**",
                 "/captcha"
         );
     }
@@ -86,6 +82,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
+                .antMatchers("/druid/**",
+                        "/doc.html",
+                        "/webjars/**",
+                        "/swagger-resources/**",
+                        "/v2/api-docs/**").permitAll()
                 //所有的请求都要认证
                 .anyRequest()
                 .authenticated()

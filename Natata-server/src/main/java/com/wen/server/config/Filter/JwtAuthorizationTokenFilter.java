@@ -2,6 +2,7 @@ package com.wen.server.config.Filter;
 
 import com.wen.server.config.security.JwtTokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,7 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * JWT授权令牌过滤器
+ *
+ * @author wen
+ */
 public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {
+
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;
     @Value("${jwt.tokenHead}")
@@ -26,6 +33,7 @@ public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {
     private JwtTokenUtils jwtTokenUtils;
 
     @Autowired
+    @Qualifier(value = "myUserDetailsService")
     private UserDetailsService userDetailsService;
 
     @Override

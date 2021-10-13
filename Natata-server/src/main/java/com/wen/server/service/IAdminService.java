@@ -23,7 +23,7 @@ public interface IAdminService extends IService<Admin> {
      * @param request  请求
      * @return
      */
-    RespEntity login(String username, String password, HttpServletRequest request);
+    RespEntity login(String username, String password, String code, HttpServletRequest request);
 
     /**
      * 根据用户名获取用户

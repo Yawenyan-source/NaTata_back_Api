@@ -17,7 +17,7 @@ spring:
       #      配置获取等待超时的时间
       max-wait: 60000
       #      配置多久才进行一次监测,监测需要关闭的空闲连接,单位是毫秒
-      time-between-eviction-runs-millis: 60000
+      time-between-eviction-runs-millis: 600000
       #      配置一个连接在连接池中最小生存的时间,单位是毫秒
       min-evictable-idle-time-millis: 300000
       validation-query: SELECT 1
@@ -48,6 +48,7 @@ spring:
         login-username: wen
         #登录密码
         login-password: 123456
+        enabled: true
 
 mybatis-plus:
   #  配置Mapper映射文件

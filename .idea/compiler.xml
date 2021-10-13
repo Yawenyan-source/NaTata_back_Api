@@ -13,7 +13,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Natata-generator" target="17" />
-      <module name="Natata-server" target="1.8" />
+      <module name="Natata-server" target="17" />
       <module name="NaTata_back_Api" target="17" />
       <module name="wrapper" target="1.5" />
     </bytecodeTargetLevel>

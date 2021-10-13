@@ -8,6 +8,7 @@ import com.wen.server.entity.RespEntity;
 import com.wen.server.mapper.AdminMapper;
 import com.wen.server.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -32,6 +34,7 @@ import java.util.Map;
 public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements IAdminService {
 
     @Autowired
+    @Qualifier("myUserDetailsService")
     private UserDetailsService userDetailsService;
 
     @Autowired
@@ -52,10 +55,15 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
      * @param username 用户名
      * @param password 密码
      * @param request  请求
-     * @return
+     * @return 返回成功或者失败的信息
      */
     @Override
-    public RespEntity login(String username, String password, HttpServletRequest request) {
+    public RespEntity login(String username, String password, String code, HttpServletRequest request) {
+        String captcha = (String) request.getSession().getAttribute("captcha");
+        System.out.println("收到的验证码是" + captcha);
+        if (!StringUtils.hasLength(code) || !captcha.equalsIgnoreCase(code)) {
+            return RespEntity.error("验证码输入错误,请重新输入!!!");
+        }
         //登录
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         //判断传进来的username存不存在和传进来的密码是否匹配
@@ -85,7 +93,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
      * 根据用户名获取用户 实现类
      *
      * @param username 用户名
-     * @return
+     * @return 返回查询到的用户信息
      */
     @Override
     public Admin getAdminByUsername(String username) {
